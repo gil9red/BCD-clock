@@ -327,18 +327,4 @@ if __name__ == '__main__':
     w.show()
     w.resize(430, 480)
 
-    i = 1
-    timer = QTimer()
-    timer.setInterval(1000)
-    def foo():
-        global i
-        w.grab().save('{}.png'.format(i))
-        i += 1
-        if i == 11:
-            timer.stop()
-            quit()
-
-    timer.timeout.connect(foo)
-    timer.start()
-
     app.exec()
